@@ -78,7 +78,7 @@ var ImageMapChartApp = {
             items: options.items
         });
 
-        jQuery('body').show();
+        jQuery('.interactive-container').show();
     }
 };
 
