@@ -1,6 +1,6 @@
-/* global jQuery: true, module: true */
+/* global module: true */
 
-jQuery = require('jquery');
+var jQuery = require('jquery');
 var Backbone = require('backbone');
 var _ = require('underscore');
 var models = require('./models.js');
@@ -72,7 +72,7 @@ var ImageMapView = Backbone.View.extend({
 
 var ImageMapChartApp = {
     initialize: function(options) {
-        var view = new ImageMapView({
+        new ImageMapView({
             el: jQuery(options.el),
             template: options.template,
             items: options.items

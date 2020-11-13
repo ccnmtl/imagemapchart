@@ -1,7 +1,7 @@
 OUTPUT_PATH=node_modules
 JS_FILES=src test
 
-all: clean test jshint jscs
+all: clean test eslint
 
 include js.mk
 
