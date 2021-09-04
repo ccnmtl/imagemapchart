@@ -20,6 +20,7 @@ var ImageMapView = Backbone.View.extend({
         var self = this;
         this.template = options.template;
         this.items = new models.ItemList(options.items);
+        this.background = options.background;
 
         for (var i = 0; i < this.items.length; i++) {
             this.items.at(i).bind('change', self.render);
@@ -31,7 +32,8 @@ var ImageMapView = Backbone.View.extend({
     },
     render: function() {
         var context = {
-            'items': this.items.toTemplate()
+            'items': this.items.toTemplate(),
+            'background': this.background
         };
 
         var markup = this.template(context);
@@ -75,7 +77,8 @@ var ImageMapChartApp = {
         new ImageMapView({
             el: jQuery(options.el),
             template: options.template,
-            items: options.items
+            items: options.items,
+            background: options.background
         });
 
         jQuery('.interactive-container').show();
